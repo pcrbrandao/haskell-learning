@@ -1,0 +1,6 @@
+{
+    "code-runner.executorMap": {
+        "haskell": "stack run",
+        "go": "go run",
+    }
+}
