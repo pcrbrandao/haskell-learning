@@ -1,6 +1,8 @@
 module Lib
-    ( someFunc
+    ( startPoint
     ) where
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+import UdemyCourse.Average
+
+startPoint :: IO ()
+startPoint = putStrLn . show $ average [1, 2, 3]
