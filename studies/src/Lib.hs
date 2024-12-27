@@ -1,8 +1,17 @@
-module Lib
-    ( startPoint
+module Lib (
+    startPoint,
+    shuffleList
     ) where
 
-import UdemyCourse.Average
+import System.Random ( newStdGen )
+import System.Random.Shuffle ( shuffle' )
 
 startPoint :: IO ()
-startPoint = putStrLn . show $ average [1, 2, 3]
+startPoint = do
+    shuffled <- shuffleList ([1, 2, 3, 4, 5] :: [Int])
+    putStrLn ("Resultado: " ++ show shuffled)
+
+shuffleList :: [a] -> IO [a]
+shuffleList [] = return []
+shuffleList xs = do
+    shuffle' xs (length xs) <$> newStdGen

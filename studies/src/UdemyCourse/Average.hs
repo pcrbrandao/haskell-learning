@@ -1,9 +1,6 @@
-module UdemyCourse.Average (
-    average
-) where
+module UdemyCourse.Average (average) where
 
 average :: [Int] -> Float
-
 average x = sumElem / len
     where
         sumElem = fromIntegral(sum(x)) :: Float

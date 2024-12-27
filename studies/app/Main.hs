@@ -1,6 +1,6 @@
-module Main (main) where
+module Main ( main ) where
 
-import Lib
+import Lib (startPoint)
 
-main :: IO ()
+main :: IO()
 main = startPoint

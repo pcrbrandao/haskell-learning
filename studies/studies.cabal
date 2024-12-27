@@ -35,7 +35,13 @@ library
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
-      base >=4.7 && <5
+      MonadRandom
+    , base >=4.7 && <5
+    , primitive
+    , random
+    , random-shuffle
+    , splitmix
+    , transformers-compat
   default-language: Haskell2010
 
 executable studies-exe
@@ -48,8 +54,14 @@ executable studies-exe
       app
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      MonadRandom
+    , base >=4.7 && <5
+    , primitive
+    , random
+    , random-shuffle
+    , splitmix
     , studies
+    , transformers-compat
   default-language: Haskell2010
 
 test-suite studies-test
@@ -63,7 +75,13 @@ test-suite studies-test
       test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      QuickCheck
+      MonadRandom
+    , QuickCheck
     , base >=4.7 && <5
+    , primitive
+    , random
+    , random-shuffle
+    , splitmix
     , studies
+    , transformers-compat
   default-language: Haskell2010
